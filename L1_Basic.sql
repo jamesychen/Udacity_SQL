@@ -38,7 +38,7 @@ SELECT name, website, primary_poc
 FROM accounts
 WHERE name = 'Exxon Mobil';
 
---AS!!
+--AS
 SELECT id, account_id, ROUND((standard_amt_usd/standard_qty),2) AS unit_price
 FROM orders
 LIMIT 10;
@@ -48,7 +48,7 @@ SELECT id, account_id, poster_amt_usd/
 FROM orders
 LIMIT 10;
 
---LIKE!!
+--LIKE
 SELECT name
 FROM accounts
 WHERE name LIKE 'C%';
@@ -70,7 +70,7 @@ SELECT *
 FROM web_events
 WHERE channel IN ('organic', 'adwords');
 
---NOT!!
+--NOT
 SELECT name, primary_poc, sales_rep_id
 FROM accounts
 WHERE name NOT IN ('Walmart', 'Target', 'Nordstorm');
@@ -91,7 +91,7 @@ SELECT *
 FROM accounts
 WHERE name NOT LIKE ('%s');
 
---AND!BETWEEN
+--AND,BETWEEN
 SELECT *
 FROM orders 
 WHERE standard_qty > 1000 AND poster_qty = 0 AND gloss_qty = 0;
@@ -109,7 +109,7 @@ FROM web_events
 WHERE channel IN ('organic', 'adwords')AND occurred_at BETWEEN '2016-01-01' AND '2017-01-01'
 ORDER BY occurred_at DESC
 
---OR!!
+--OR
 
 SELECT gloss_qty, poster_qty, id
 FROM orders
